@@ -48,7 +48,7 @@ const Home = () => {
             }}>
 
                 {currentUser ? (
-                    <p>You are logged in - <Link to="/dashboard">View Dashboard</Link></p>
+                    <p>You are logged in - View NewsFeed</p>
                 ) : (
                     <p>
                         <Link to="/login" className="btn btn-primary">Log In</Link>

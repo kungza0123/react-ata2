@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -14,6 +14,10 @@ import MenuIcon from "@material-ui/icons/Menu";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import categories from "../data/categories";
+import { Redirect } from 'react-router-dom'
+import { AuthContext } from './Auth'
+import firebaseConfig from '../config'
+import React, { useContext } from 'react'
 
 const useStyles = makeStyles({
   list: {
@@ -54,7 +58,11 @@ export default function TemporaryDrawer({ setCategory }) {
 
     setState({ ...state, [anchor]: open });
   };
+  const { currentUser } = useContext(AuthContext);
 
+  if (!currentUser) {
+    return <Redirect to="/login" />;
+  }
   const list = (anchor) => (
     <div
       className={clsx(classes.list, {
@@ -64,8 +72,9 @@ export default function TemporaryDrawer({ setCategory }) {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+
       <List>
-        <ListItem>Categories</ListItem>
+        <ListItem>Menu</ListItem>
       </List>
       <Divider />
       <List>
@@ -78,7 +87,13 @@ export default function TemporaryDrawer({ setCategory }) {
           >
             <ListItemText primary={text} />
           </ListItem>
+
         ))}
+      </List>
+      <List>
+        <ListItem onClick={() => firebaseConfig.auth().signOut()} class="btn btn-danger">
+          Sign Out
+        </ListItem>
       </List>
     </div>
   );
