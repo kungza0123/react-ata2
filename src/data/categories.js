@@ -1,7 +1,7 @@
-import { Redirect } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
 const categories = [
-    "Dashboard",
-    "..."
+    "News feed",
+    "Consign,Reward"
   ];
   
   export default categories;

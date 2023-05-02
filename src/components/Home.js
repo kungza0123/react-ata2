@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from './Auth'
-import logo from '../Img/logo.png'
+// import logo from '../Img/logo.png'
 import NavInshorts from "./NavInshorts";
 import NewsContent from "./NewsContent/NewsContent";
-import apikey from "../data/config";
+// import apikey from "../data/config";
 import axios from 'axios';
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
 
     const newsApi = async () => {
         try {
-          const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+          // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
           const news = await axios.get(
             "https://saurav.tech/NewsAPI/top-headlines/category/health/in.json"
           );

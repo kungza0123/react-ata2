@@ -1,9 +1,10 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './components/Home'
-import Dashboard from './components/Dashboard'
+// import Dashboard from './components/Dashboard'
 import LogIn from './components/LogIn'
 import SignUp from './components/SignUp'
+import Consign from './components/consign'
 import { AuthProvider } from './components/Auth'
 import NavInshorts from'./components/NavInshorts'
 import './App.css';
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/NavInshorts" component={NavInshorts} />
           <Route exact path="/Home" component={Home} />
+          <Route exact path="/consign" component={Consign} />
         </Switch>
       </Router>
     </AuthProvider>
