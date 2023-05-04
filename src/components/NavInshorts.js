@@ -4,7 +4,7 @@ import HamburgerDrawer from "./HamburgerDrawer";
 
 const NavInshorts = ({ setCategory }) => {
   return (
-    <div className="nav">
+    <div className="nav" style={{ position: "fixed", width: "100%", zIndex: "100", backgroundColor: "white", paddingLeft: "10px" }}>
       
       <img
         style={{ cursor: "pointer" }}
@@ -12,7 +12,7 @@ const NavInshorts = ({ setCategory }) => {
         alt="logo"
         height="70%"
         className="image"
-        // Align="center"
+        Align="center"
       />
       
       <div className="icon" >

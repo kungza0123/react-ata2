@@ -7,6 +7,7 @@ import SignUp from './components/SignUp'
 import Consign from './components/consign'
 import { AuthProvider } from './components/Auth'
 import NavInshorts from'./components/NavInshorts'
+import FloatButton from'./components/FloatButton'
 import './App.css';
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/login" component={LogIn} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/NavInshorts" component={NavInshorts} />
+          <Route exact path="/FloatButton" component={FloatButton} />
           <Route exact path="/Home" component={Home} />
           <Route exact path="/consign" component={Consign} />
         </Switch>

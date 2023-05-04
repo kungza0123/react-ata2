@@ -1,4 +1,4 @@
-// import React from "react";
+import React, { useContext } from 'react'
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -17,7 +17,6 @@ import categories from "../data/categories";
 import { Redirect } from 'react-router-dom'
 import { AuthContext } from './Auth'
 import firebaseConfig from '../config'
-import React, { useContext } from 'react'
 
 const useStyles = makeStyles({
   list: {
@@ -109,6 +108,12 @@ export default function TemporaryDrawer({ setCategory }) {
             anchor={"right"}
             open={state["right"]}
             onClose={toggleDrawer("right", false)}
+            PaperProps={{
+              style: {
+                backgroundColor: "white"
+              }
+            }
+          }
           >
             {list("left")}
           </Drawer>
